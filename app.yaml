@@ -1,8 +1,6 @@
 runtime: python311
 env: standard
 
-service: cs348proj  # Replace with your desired app name
-
 handlers:
 - url: /.*
   script: main.app
