@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ workshop[1] }} Details</title>
+</head>
+<body>
+    <h1>{{ workshop[1] }}</h1>
+    <p>Date: {{ workshop[2] }}</p>
+    <p>Duration: {{ workshop[3] }} hours</p>
+
+    <h2>Registrations</h2>
+    <ul>
+        {% for registration in registrations %}
+            <li>
+                {{ registration[1] }} (Status: {{ registration[2] }})
+                <a href="{{ url_for('delete_registration_route', workshop_id=workshop[0], registration_id=registration[0]) }}">Unregister</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Register a User</h3>
+    <form action="{{ url_for('register_user') }}" method="post">
+        <select name="user_id">
+            {% for user in users %}
+                <option value="{{ user[0] }}">{{ user[1] }}</option>
+            {% endfor %}
+        </select>
+        <input type="hidden" name="workshop_id" value="{{ workshop[0] }}">
+        <button type="submit">Register</button>
+    </form>
+
+    <a href="{{ url_for('workshops') }}">Back to Workshops</a>
+</body>
+</html>
