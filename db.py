@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker, relationship
 import os
 
 # Connect to the database (creates the file if it doesn't exist)
-DATABASE = '/Users/agastya/cs348/proj1/part1/data/database.db'
+DATABASE = '../data/database.db'
 
 # DATABASE_URI = 'sqlite:///Users/agastya/cs348/proj1/part1/data/database.db'
 # engine = create_engine(DATABASE_URI)
