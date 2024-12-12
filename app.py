@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)  # Generates a secure random key
 
 # Database setup
-DATABASE = '/Users/agastya/cs348/proj1/part1/data/database.db'
+DATABASE = '../data/database.db'
 
 initialize_database()
 
